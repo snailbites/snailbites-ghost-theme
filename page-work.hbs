@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+<a name="top"></a>
+<nav id="navbar" class="navbar">
+    <ul>
+    <li><a class="link-about" href="#about">ABOUT</a></li>
+    <li><a class="link-work" href="#work">WORK</a></li>
+    </ul>
+</nav>
+<article id="home" class="home">
+
+    <section class="intro">
+        <h1>My name is Vince</h1>
+        I make websites<br>
+        I engineer the front end at <a href="http://www.jcrew.com" target="_blank">J.Crew</a><br>
+        I'm brewing <a href="http://www.caffevita.com/coffee/blends/theo-blend" target="_blank">Caffe Vita Theo blend</a>
+        Currently digging <a href="http://addyosmani.com/resources/essential/jsdesignpatterns/book/" target="_blank">design patterns</a><br>
+
+    </section>
+    <div class="clear"></div>
+</article>
+<article id="about" class="about">
+    <a name="about"></a>
+    <figure>
+        <img src="/images/about-frame.png" />
+    </figure>
+    <section class="bio">
+        <p>My name is Vince and Snail is my nickname.</p>
+        <p>
+        My expertise as a Front End Developer comes from industry proven experience, combined with a rock solid background in Computer Science from Maryland. I season that with a plethora of volunteer work, including a four month stint working with impoverished communities in Southeast Asia.
+        </p>
+        <p>
+        My human approach coupled with my strong technical background, allow me to hand craft an engaging, custom-fit web experience for every project I face.
+        </p>
+    </section>
+    <div class="line"></div>
+    <div class="clear"></div>
+</article>
+<article id="work" class="work">
+    <aside class="sidebar">
+        <ul>
+            <li><a data-project="jcrew-pdp" data-link="http://www.jcrew.com/womens_category/sweaters/Pullover/PRDOVR~46725/46725.jsp" class="selected">J.Crew PDP</a></li>
+            <li><a data-project="jcrew-quickshop" data-link="http://www.jcrew.com/womens_feature/lookswelove.jsp">J.Crew Quickshop</a></li>
+            <li><a data-project="tgoodman" data-link="http://tgoodman.com/">Tim Goodman</a></li>
+            <li><a data-project="richtu" data-link="http://richtu.com/">Rich Tu</a></li>
+            <li><a data-project="espn-recruiting" data-link="http://espn.go.com/college-sports/basketball/recruiting/school/_/id/120">ESPN Recruiting Nation</a></li>
+            <li><a data-project="dreamteam25" data-link="http://dreamteam25.org/">Mark Teixeria</a></li>
+            <li><a data-project="suze-orman" data-link="http://www.theapprovedcard.com/">Suze Orman</a></li>
+            <li><a data-project="leadership" data-link="http://theleadershiproom.com/blog/">The Leadership Room</a></li>
+        </ul>
+    </aside>
+    <figure>
+        <img class="preloader" src="/images/preloader.gif" />
+        <a href="http://www.jcrew.com/womens_category/sweaters/Pullover/PRDOVR~46725/46725.jsp" target="_blank">
+            <img id="screenshot" src="/images/screenshots/jcrew-pdp.png" data-project="jcrew-pdp" width="580" height="333" />
+            <figcaption id="caption">Developed the front end functionality for an overhaul of the J.Crew, J.Crew Factory and Madewell product detail pages.</figcaption>
+        </a>
+    </figure>
+    <div class="clear"></div>
+</article>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+    $(document).ready(function(){
+        MyApp.init();
+        $(['/img/dreamteam25.png', '/img/espn-recruiting.png', '/img/jcrew-pdp.png', '/img/jcrew-quickshop.png', '/img/leadership.png', '/img/richtu.png', '/img/suze-orman.png', '/img/tgoodman.png']).preload();
+    });
+</script>
+   <footer class="site-footer clearfix">
+         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>
