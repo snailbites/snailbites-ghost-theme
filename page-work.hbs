@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/work.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -44,7 +44,7 @@
 <article id="about" class="about">
     <a name="about"></a>
     <figure>
-        <img src="/images/about-frame.png" />
+        <img src="{{asset "images/about-frame.png"}}"/>    
     </figure>
     <section class="bio">
         <p>My name is Vince and Snail is my nickname.</p>
@@ -72,37 +72,39 @@
         </ul>
     </aside>
     <figure>
-        <img class="preloader" src="/images/preloader.gif" />
+        <img class="preloader" src="{{asset "images/preloader.gif"}}" />        
         <a href="http://www.jcrew.com/womens_category/sweaters/Pullover/PRDOVR~46725/46725.jsp" target="_blank">
-            <img id="screenshot" src="/images/screenshots/jcrew-pdp.png" data-project="jcrew-pdp" width="580" height="333" />
+            <img id="screenshot" src="{{asset "screenshots/jcrew-pdp.png"}}" data-project="jcrew-pdp" width="580" height="333" />
             <figcaption id="caption">Developed the front end functionality for an overhaul of the J.Crew, J.Crew Factory and Madewell product detail pages.</figcaption>
         </a>
     </figure>
     <div class="clear"></div>
 </article>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="/js/plugins.js"></script>
-<script src="/js/main.js"></script>
+<footer id="footer">
+    <div class="inner">
+        <section class="column">
+            &nbsp;
+        </section>
 
+        <section class="column">
+            <p>You can contact me at <a style="color: #FFF; text-decoration: none;" href="mailto:snail@snailbites.com">snail@snailbites.com</a>.</p>                                    
+            <p>All work is the property of Vincent Nalupta and cannot be used without permission.</p>
+            <p>Copyright 2014 &bull; Snailbites.com</p>
+        </section>
+
+        <section class="column last">                                        
+        </section>
+    </div>
+</footer>
+<script type="text/javascript" src="{{asset "js/work.js"}}"></script>
 <script>
     $(document).ready(function(){
         MyApp.init();
-        $(['/img/dreamteam25.png', '/img/espn-recruiting.png', '/img/jcrew-pdp.png', '/img/jcrew-quickshop.png', '/img/leadership.png', '/img/richtu.png', '/img/suze-orman.png', '/img/tgoodman.png']).preload();
+        $(['{{asset "screenshots/dreamteam25.png"}}', '{{asset "screenshots/espn-recruiting.png"}}', '{{asset "screenshots/jcrew-pdp.png"}}', '{{asset "screenshots/jcrew-quickshop.png"}}', '{{asset "screenshots/leadership.png"}}', '{{asset "screenshots/richtu.png"}}', '{{asset "screenshots/suze-orman.png"}}', '{{asset "screenshots/tgoodman.png"}}']).preload();
     });
 </script>
-   <footer class="site-footer clearfix">
-         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-    </footer>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
-
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>
