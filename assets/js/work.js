@@ -107,20 +107,24 @@ var MyApp = (function(){
   // nav clicks
   var bindNavEvents = function() {
     $('#navbar').on('click','a',function(e){
-      var $body = $('body');
-      e.preventDefault();
+      var $body = $('body');      
       e.stopPropagation();
+      e.preventDefault();
+
+      if($(this).hasClass('link-blog')){
+        window.location.href = '/';
+        return false;
+      }
+        
 
       switch ($(this).attr('href')){
         case "#about" : $body.animate({ scrollTop : '505px' }, 350 );
-                break;
-                case "#work"  : $body.animate({ scrollTop : '1140px' }, 350 );
-                break;
-                case "#blog"  : return false;
-                break;
-                default     : break;
-            }
-        })
+                        break;
+        case "#work" : $body.animate({ scrollTop : '1140px' }, 350 );
+                        break;
+        default     : break;
+      }
+    })
   };
   // on resize browser
   var watchResize = function(){
